@@ -3,11 +3,8 @@ pipeline {
    stages {
     stage('Pull Code') {
       steps {
-        script {
-           git url: 'https://github.com/aakashsehgal/FMU.git'
-           sh "ls -lart ./*" 
-           sh "git branch -a"
-           sh "git checkout branchname"
+checkout([$class: 'GitSCM', branches: [[name: '*/master']],
+    userRemoteConfigs: [[url: 'https://github.com/avishai0528/devops-project02.git']]])
           }
        }
     }

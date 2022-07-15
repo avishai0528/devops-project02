@@ -21,23 +21,23 @@ pipeline {
         
         stage('run backend_testing.py') {
             steps {
-                bat 'start /min python backend_testing.py'
+                bat 'python backend_testing.py'
             }
         }
         
         stage('run frontend_testing.py') {
             steps {
-                bat 'start /min python frontend_testing.py'
+                bat 'python frontend_testing.py'
             }
         }
         stage('run combined_testing.py') {
             steps {
-                bat 'start /min python combined_testing.py'
+                bat 'python combined_testing.py'
             }
         }
         stage('run clean_environment.py') {
             steps {
-                bat 'start /min python clean_environment.py'
+                bat 'python clean_environment.py'
             }
         }
     }

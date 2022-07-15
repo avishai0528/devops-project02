@@ -15,12 +15,12 @@ pipeline {
         }
         stage('run web_app.py') {
             steps {
-                bat 'pip install requests'
                 bat 'start /min python web_app.py'
             }
         }
         stage('run backend_testing.py') {
             steps {
+                bat 'pip install requests'
                 bat 'python backend_testing.py'
             }
         }
